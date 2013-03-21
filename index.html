@@ -38,17 +38,10 @@ $(function(){
 		setResult($("#lengthOutput"), $("#lengthInput").val().toCodePoints().length);
 	});
 	
-	hide($("#lengthOutput"));
-	hide($("#resultOutput"));
+	hide($(".resultDisplay"));
 });
 </script>
 </head>
-<body>
-</body>
-</html>
-
-
-
 <body>
 <div class="container">
 <div>
@@ -57,7 +50,7 @@ $(function(){
 	<input id="charInput" placeholder="char" value="a" class="input-mini" />
 	<input id="countInput" placeholder="num" value="1" class="input-mini" />
 	<button type="button" id="submit_btn" class="btn">generate</button>
-	<div id="resultOutput" class="alert alert-success"/>
+	<div id="resultOutput" class="alert alert-success resultDisplay"/>
 	
 </form>
 </div>
@@ -66,9 +59,16 @@ $(function(){
 	<form class="form-search">
 		<input id="lengthInput" placeholder="char" value="a" class="input-xxlarge" />
 		<button type="button" id="length_btn" class="btn">count</button>
-		<div id="lengthOutput" class="alert alert-success"/>
+		<div id="lengthOutput" class="alert alert-success resultDisplay"/>
 	</form>
 </div>
+
+
+<div>
+	<hr />
+	<address><a href="https://github.com/kazup0n/strtool/">github</a></address>  
 </div>
+</div>
+
 </body>
 </html>
