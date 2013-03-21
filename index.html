@@ -1,0 +1,73 @@
+<!doctype html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>chr tools</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+<script src="js/jquery/jquery.min.js"></script>
+<script>
+$(function(){
+
+	var hide = function(e){
+		e.hide();
+	};
+	
+	var setResult = function(e, text){
+		e.show(0.1);
+		e.text(text);
+	}
+	
+	
+	$("#submit_btn").click(function(){
+		var char = $("#charInput").val();
+		var count = parseInt($("#countInput").val());
+		var raw = new Array(count);
+		for(var i = 0; i < count; i++){
+			raw[i] = char;
+		}
+		console.log(raw);
+		setResult($("#resultOutput"),raw.join(''));
+	});
+	
+	$("#length_btn").click(function(){
+		setResult($("#lengthOutput"), $("#lengthInput").val().length);
+	});
+	
+	hide($("#lengthOutput"));
+	hide($("#resultOutput"));
+});
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+<body>
+<div class="container">
+<div>
+<h1>rep str</h1>
+<form class="form-search">
+	<input id="charInput" placeholder="char" value="a" class="input-mini" />
+	<input id="countInput" placeholder="num" value="1" class="input-mini" />
+	<button type="button" id="submit_btn" class="btn">generate</button>
+	<div id="resultOutput" class="alert alert-success"/>
+	
+</form>
+</div>
+<div>
+<h1>cnt str</h1>
+	<form class="form-search">
+		<input id="lengthInput" placeholder="char" value="a" class="input-xxlarge" />
+		<button type="button" id="length_btn" class="btn">count</button>
+		<div id="lengthOutput" class="alert alert-success"/>
+	</form>
+</div>
+</div>
+</body>
+</html>
