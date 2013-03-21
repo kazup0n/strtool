@@ -9,6 +9,7 @@
 <meta name="description" content="">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 <script src="js/jquery/jquery.min.js"></script>
+<script src="js/string.js"></script>
 <script>
 $(function(){
 
@@ -34,7 +35,7 @@ $(function(){
 	});
 	
 	$("#length_btn").click(function(){
-		setResult($("#lengthOutput"), $("#lengthInput").val().length);
+		setResult($("#lengthOutput"), $("#lengthInput").val().toCodePoints().length);
 	});
 	
 	hide($("#lengthOutput"));
