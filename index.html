@@ -38,6 +38,12 @@ $(function(){
 		setResult($("#lengthOutput"), $("#lengthInput").val().toCodePoints().length);
 	});
 	
+	$("#codePoint_btn").click(function(){
+		var codePoints = $("#codePointInput").val().toCodePoints().map(function(s){ return "0x" + s.toString(16);});
+		
+		setResult($("#codePointOutput"), codePoints.join(","));
+	});
+	
 	hide($(".resultDisplay"));
 });
 </script>
@@ -60,6 +66,15 @@ $(function(){
 		<input id="lengthInput" placeholder="char" value="a" class="input-xxlarge" />
 		<button type="button" id="length_btn" class="btn">count</button>
 		<div id="lengthOutput" class="alert alert-success resultDisplay"/>
+	</form>
+</div>
+
+
+<h1>code point</h1>
+	<form class="form-search">
+		<input id="codePointInput" placeholder="char" value="a" class="input-xxlarge" />
+		<button type="button" id="codePoint_btn" class="btn">count</button>
+		<div id="codePointOutput" class="alert alert-success resultDisplay"/>
 	</form>
 </div>
 
