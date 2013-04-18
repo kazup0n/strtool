@@ -4,9 +4,10 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>chr tools</title>
+<title>str tools</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoFgAAKBQAAKgVAACIEQAAzDMAAO/3AAAMMAAA69cAAN/7AAAJkAAA2ZsAAO/3AADmZwAA5acAAOPHAADn5wAA" rel="icon" type="image/x-icon" />
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 <script src="js/jquery/jquery.min.js"></script>
 <script src="js/string.js"></script>
@@ -39,7 +40,11 @@ $(function(){
 	});
 	
 	$("#codePoint_btn").click(function(){
-		var codePoints = $("#codePointInput").val().toCodePoints().map(function(s){ return "0x" + s.toString(16);});
+		var codePoints = $("#codePointInput").val().toCodePoinsts();
+		if(codeArray.size > 0){
+		
+		}
+		var codePoints = text.toCodePoints().map(function(s){ return "0x" + s.toString(16);});
 		
 		setResult($("#codePointOutput"), codePoints.join(","));
 	});
@@ -53,7 +58,7 @@ $(function(){
 <div>
 <h1>rep str</h1>
 <form class="form-search">
-	<input id="charInput" placeholder="char" value="a" class="input-mini" />
+	<input id="charInput" placeholder="char" class="input-mini" />
 	<input id="countInput" placeholder="num" value="1" class="input-mini" />
 	<button type="button" id="submit_btn" class="btn">generate</button>
 	<div id="resultOutput" class="alert alert-success resultDisplay"/>
@@ -63,23 +68,23 @@ $(function(){
 <div>
 <h1>cnt str</h1>
 	<form class="form-search">
-		<input id="lengthInput" placeholder="char" value="a" class="input-xxlarge" />
+		<input id="lengthInput" placeholder="char" class="input-xxlarge" />
 		<button type="button" id="length_btn" class="btn">count</button>
 		<div id="lengthOutput" class="alert alert-success resultDisplay"/>
 	</form>
 </div>
 
 
-<h1>code point</h1>
+<h1>code pnt</h1>
 	<form class="form-search">
-		<input id="codePointInput" placeholder="char" value="a" class="input-xxlarge" />
-		<button type="button" id="codePoint_btn" class="btn">count</button>
+		<input id="codePointInput" placeholder="char"  class="input-xxlarge" />
+		<button type="button" id="codePoint_btn" class="btn">to points</button>
 		<div id="codePointOutput" class="alert alert-success resultDisplay"/>
 	</form>
 </div>
 
 <div>
-	<h1>special chars</h1>
+	<h1>sp chars</h1>
 	<code>𩸽</code>
 	<code>辻󠄀辻󠄀</code>
 	<code>!@#$%^&*()_+|~&gt;&lt;'":;.,/?[]{}`=-</code>
@@ -90,7 +95,11 @@ $(function(){
 
 <div>
 	<hr />
-	<address><a href="https://github.com/kazup0n/strtool/">github</a></address>  
+	<address>
+		<a href="https://github.com/kazup0n/strtool/">github</a>
+		&nbsp;
+		<a href="http://www.favicon.cc/?action=icon&file_id=597624">favicon</a>
+		</address>  
 </div>
 </div>
 
