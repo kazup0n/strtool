@@ -40,12 +40,7 @@ $(function(){
 	});
 	
 	$("#codePoint_btn").click(function(){
-		var codePoints = $("#codePointInput").val().toCodePoinsts();
-		if(codeArray.size > 0){
-		
-		}
-		var codePoints = text.toCodePoints().map(function(s){ return "0x" + s.toString(16);});
-		
+		var codePoints = $("#codePointInput").val().toCodePoints().map(function(s){ return "0x" + s.toString(16);});
 		setResult($("#codePointOutput"), codePoints.join(","));
 	});
 	
